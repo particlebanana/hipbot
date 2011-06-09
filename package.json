@@ -1,0 +1,17 @@
+{
+    "name": "hipbot"
+  , "version": "0.0.1"
+  , "description": "Ze bot for ze hipchat"
+  , "keywords": ["bot", "hipchat"]
+  , "homepage": "http://particlebanana.com"
+  , "author": "Cody Stoltman <particlebanana@gmail.com> (http://twitter.com/codystoltman)"
+  , "dependencies": {
+      "coffee-script": ">=1.1.1"
+    , "node-xmpp": "0.2.7"
+    , "underscore": "1.1.6"
+    }
+  , "main": "hipbot.js"
+  , "engines": {
+      "node": ">= 0.4.1 < 0.5.0"
+    }
+}
