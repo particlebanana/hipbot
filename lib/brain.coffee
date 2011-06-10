@@ -134,6 +134,10 @@ class exports.Brain extends process.EventEmitter
     @jabber.send(packet)
   
   
+  # Speak Robot!
+  say: (target, message, callback) ->
+    @message target, message, callback
+  
   # Send a message
   message: (target, message) ->
     if target.match(/^(.*)@conf.hipchat.com$/)
@@ -164,12 +168,12 @@ class exports.Brain extends process.EventEmitter
   
   
   # Send Bot on a journey
-  request = (method, path, body, callback) ->
-    match = path.match(/^(https?):\/\/([^\/]+?)(\/.+)/)
-    headers = { Host: match[2],  'Content-Type': 'application/json', 'User-Agent': 'hipbot' }
-    port = if match[1] == 'https' then 443 else 80
-    client = http.createClient(port, match[2], port == 443)
-    path = match[3]
+  request = (method, path, body, callback) ->    
+    if match = path.match(/^(https?):\/\/([^\/]+?)(\/.+)/)
+      headers = { Host: match[2],  'Content-Type': 'application/json', 'User-Agent': 'hipbot' }
+      port = if match[1] == 'https' then 443 else 80
+      client = http.createClient(port, match[2], port == 443)
+      path = match[3]
     
     if typeof(body) is 'function' and not callback
       callback = body
@@ -223,8 +227,6 @@ class exports.Brain extends process.EventEmitter
   
   # Load Bot Skills
   loadPlugin: (identifier, plugin, options) ->
-    throw new Error('plugin must be an object') unless typeof plugin == 'object'
-    throw new Error('plugin must have a load function') unless typeof plugin.load == 'function'
     @plugins[identifier] = plugin
     @plugins[identifier].load(this, options)
     true
