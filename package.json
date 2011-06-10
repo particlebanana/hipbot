@@ -9,6 +9,7 @@
       "coffee-script": ">=1.1.1"
     , "node-xmpp": "0.2.8"
     , "underscore": "1.1.6"
+    , "jsdom": "0.2.1"
     }
   , "main": "hipbot.js"
   , "engines": {
