@@ -7,7 +7,7 @@
   , "author": "Cody Stoltman <particlebanana@gmail.com> (http://twitter.com/codystoltman)"
   , "dependencies": {
       "coffee-script": ">=1.1.1"
-    , "node-xmpp": "0.2.7"
+    , "node-xmpp": "0.2.8"
     , "underscore": "1.1.6"
     }
   , "main": "hipbot.js"
