@@ -3,23 +3,23 @@
 #
 
 module.exports.load = (bot) ->
-  bot.desc 'weather in PLACE'
+  bot.desc 'weather in ZIP'
   bot.onMessage(/^marvin weather in (.*)$/i, weather)
 
 
 weather = (channel, from, message, matches) ->
   self = @
   place = escape(matches[1])    
-  url   = "http://www.google.com/ig/api?weather=#{escape place}"
+  url   = "http://query.yahooapis.com/v1/public/yql/jonathan/weather?format=json&zip=" + place
   
   @get url, (body) ->
     try
-      if match = body.match(/<current_conditions>(.+?)<\/current_conditions>/)
-        condition = match[1].match(/<condition data="(.+?)"/)
-        icon = match[1].match(/<icon data="(.+?)"/)
-        degrees = match[1].match(/<temp_f data="(.+?)"/)
-        self.message channel, "#{degrees[1]}° and #{condition[1]} — http://www.google.com#{icon[1]}"
+      item = body.query.results.channel.item
+      if !item.condition
+        response = "you must give me a zip code to lookup"
       else
-        self.message channel, "i don't know that place"
+        response = item.title + ': ' + item.condition.temp + ' degrees and ' + item.condition.text
+        
+      self.message channel, "@" + from.split(' ')[0] + ' ' + response
     catch e
       console.log "Weather error: " + e
