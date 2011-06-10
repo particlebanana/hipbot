@@ -4,7 +4,7 @@
 
 module.exports.load = (bot) ->
   bot.desc 'image me PHRASE'
-  bot.onMessage(/^marvin image me (.*)$/i, images)
+  bot.onMessage(/^@marvin image me (.*)$/i, images)
 
 
 images = (channel, from, message, matches) ->

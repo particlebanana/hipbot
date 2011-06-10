@@ -3,7 +3,7 @@
 #
 
 module.exports.load = (bot) ->
-  bot.onMessage('marvin help', help)
+  bot.onMessage('@marvin help', help)
 
 
 help = (channel, from, message) ->

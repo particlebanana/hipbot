@@ -7,10 +7,10 @@ sys = require 'sys'
 
 module.exports.load = (bot) ->
   bot.desc 'lolcat me', 'returns a lolcat picture'
-  bot.onMessage('marvin lolcat me', lol)
+  bot.onMessage('@marvin lolcat me', lol)
   
   bot.desc 'failblog me', 'returns a failblog picture'
-  bot.onMessage('marvin failblog me', fail)
+  bot.onMessage('@marvin failblog me', fail)
 
       
 # LOLcats

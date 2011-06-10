@@ -4,7 +4,7 @@
 
 module.exports.load = (bot) ->
   bot.desc 'wiki me PHRASE', 'returns a wikipedia page for PHRASE'
-  bot.onMessage(/^marvin wiki me (.*)$/i, wiki)
+  bot.onMessage(/^@marvin wiki me (.*)$/i, wiki)
 
 
 wiki = (channel, from, message, matches) ->

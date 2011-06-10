@@ -4,7 +4,7 @@
 
 module.exports.load = (bot) ->
   bot.desc 'weather in ZIP'
-  bot.onMessage(/^marvin weather in (.*)$/i, weather)
+  bot.onMessage(/^@marvin weather in (.*)$/i, weather)
 
 
 weather = (channel, from, message, matches) ->
