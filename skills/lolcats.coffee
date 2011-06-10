@@ -10,7 +10,7 @@ module.exports.load = (bot) ->
   bot.onMessage('marvin lolcat me', lol)
   
   bot.desc 'failblog me', 'returns a failblog picture'
-  bot.onMessage('marvin fail me', fail)
+  bot.onMessage('marvin failblog me', fail)
 
       
 # LOLcats
