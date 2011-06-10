@@ -57,7 +57,7 @@ class exports.Brain extends process.EventEmitter
 
   onStanza: (stanza) ->
     @emit('data', stanza)
-
+    
     if stanza.is('message') && stanza.attrs.type == 'groupchat'
       body = stanza.getChild('body')
       return unless body
@@ -69,7 +69,7 @@ class exports.Brain extends process.EventEmitter
       channel = attrFrom.substring(0, offset)
       from = attrFrom.substring(offset + 1)
 
-      return if from == this.name
+      return if from == @name
 
       @emit('message', channel, from, body.getText())
 
