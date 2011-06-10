@@ -15,7 +15,7 @@ wiki = (channel, from, message, matches) ->
   @get url, (body) ->
     try
       if body[1][0]
-        self.message channel, "http://en.wikipedia.org/wiki/#{escape body[1][0]}"
+        self.message channel, "@" + from.split(' ')[0] + " here you are: http://en.wikipedia.org/wiki/#{escape body[1][0]}"
       else
         self.message channel, "nothin'"
     catch e
