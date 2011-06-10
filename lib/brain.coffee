@@ -22,6 +22,8 @@ class exports.Brain extends process.EventEmitter
     @password = options.password
     @name = options.name
     @debug = options.debug
+    
+    @descriptions = {}
 
 
   onError: (error) ->
@@ -214,6 +216,9 @@ class exports.Brain extends process.EventEmitter
   
   post: (path, body, callback) ->
     request('POST', path, body, callback)
+  
+  desc: (phrase, functionality) ->
+    @descriptions[phrase] = functionality
 
   
   # Load Bot Skills
