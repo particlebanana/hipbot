@@ -15,11 +15,9 @@ module.exports.load = (bot) ->
       
 # LOLcats
 lol = (channel, from, message) ->
-  self = @
-  url = "http://icanhascheezburger.com/?random"
-  
+  self = @  
   jsdom.env({
-    html: url,
+    html: "http://icanhascheezburger.com/?random",
     scripts: ['http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js'],
     done: (err, window) ->
       $ = window.jQuery
@@ -29,15 +27,14 @@ lol = (channel, from, message) ->
       else
         self.message channel, src
   })
+  true
 
 
 # FAIL blog
 fail = (channel, from, message) ->
   self = @
-  url = "http://failblog.org/?random"
-
   jsdom.env({
-    html: url,
+    html: "http://failblog.org/?random",
     scripts: ['http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js'],
     done: (err, window) ->
       $ = window.jQuery
@@ -47,3 +44,4 @@ fail = (channel, from, message) ->
       else
         self.message channel, src
   })
+  true

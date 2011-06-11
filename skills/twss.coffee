@@ -21,3 +21,5 @@ twss = (channel, from, message, matches) ->
   child.stdout.on 'data', (data) ->
     if data == 'true\n'
       self.message channel, "That's what she said!"
+  
+  true

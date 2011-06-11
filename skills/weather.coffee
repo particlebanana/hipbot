@@ -23,3 +23,4 @@ weather = (channel, from, message, matches) ->
       self.message channel, "@" + from.split(' ')[0] + ' ' + response
     catch e
       console.log "Weather error: " + e
+  true

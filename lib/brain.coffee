@@ -13,6 +13,7 @@ xmpp = require 'node-xmpp'
 class exports.Brain extends process.EventEmitter
   
   constructor: (options) ->
+    @setMaxListeners 0
       
     @jabber = null
     @keepalive = null

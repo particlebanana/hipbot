@@ -20,3 +20,4 @@ wiki = (channel, from, message, matches) ->
         self.message channel, "nothin'"
     catch e
       console.log "Wiki error: " + e
+  true

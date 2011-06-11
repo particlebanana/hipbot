@@ -13,3 +13,4 @@ help = (channel, from, message) ->
     else
       output = phrase
     @message channel, output
+  true

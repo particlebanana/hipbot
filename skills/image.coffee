@@ -19,3 +19,5 @@ images = (channel, from, message, matches) ->
       self.message channel, image.unescapedUrl
     catch e
       console.log "Image error: " + e
+  
+  true
