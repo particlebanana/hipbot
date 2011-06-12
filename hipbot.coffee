@@ -30,11 +30,11 @@ options = {
 
 skills_path = __dirname + '/skills'
 
-zazzle = new Brain options
+marvin = new Brain options
 
-require("./lib/learn").autoload zazzle, skills_path
-zazzle.connect()
+require("./lib/learn").autoload marvin, skills_path
+marvin.connect()
 
-zazzle.onConnect () ->
+marvin.onConnect () ->
   console.log 'connected'
   @join(env.HIPBOT_ROOM)
